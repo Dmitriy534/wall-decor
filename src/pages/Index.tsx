@@ -4,8 +4,16 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Paintbrush, Palette, Hammer, Phone, Mail, MapPin, Star, CheckCircle } from "lucide-react";
+import { Paintbrush, Palette, Hammer, Phone, Mail, MapPin, Star, CheckCircle, Shield, Award, Users, Clock } from "lucide-react";
 import { useState } from "react";
+
+// Import new components
+import PriceCalculator from "@/components/PriceCalculator";
+import BeforeAfterComparison from "@/components/BeforeAfterComparison";
+import ProgressSteps from "@/components/ProgressSteps";
+import FAQ from "@/components/FAQ";
+import CallbackWidget from "@/components/CallbackWidget";
+import Promotions from "@/components/Promotions";
 
 // Import images
 import heroBg from "@/assets/hero-bg.jpg";
@@ -63,7 +71,9 @@ const Index = () => {
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#services" className="smooth-transition hover:text-primary">Услуги</a>
-            <a href="#gallery" className="smooth-transition hover:text-primary">Портфолио</a>
+            <a href="#portfolio" className="smooth-transition hover:text-primary">Портфолио</a>
+            <a href="#prices" className="smooth-transition hover:text-primary">Цены</a>
+            <a href="#about" className="smooth-transition hover:text-primary">О нас</a>
             <a href="#contact" className="smooth-transition hover:text-primary">Контакты</a>
           </nav>
           <Button variant="default" className="hidden md:inline-flex">
@@ -98,11 +108,28 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="px-8 py-6 text-lg glow-effect">
-                Получить консультацию
+                <Phone className="mr-2 h-5 w-5" />
+                Рассчитать стоимость
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
-                Посмотреть работы
+                Вызвать замерщика
               </Button>
+            </div>
+            
+            {/* Преимущества */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4">
+                <Shield className="h-6 w-6 text-primary" />
+                <span className="text-lg">Без пыли и грязи</span>
+              </div>
+              <div className="flex items-center justify-center space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4">
+                <Award className="h-6 w-6 text-primary" />
+                <span className="text-lg">Гарантия 2 года</span>
+              </div>
+              <div className="flex items-center justify-center space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4">
+                <Clock className="h-6 w-6 text-primary" />
+                <span className="text-lg">Точно в срок</span>
+              </div>
             </div>
           </div>
         </div>
@@ -137,7 +164,7 @@ const Index = () => {
                     <h3 className="text-xl font-medium">Покраска стен</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">
-                    Профессиональная покраска интерьеров и фасадов. Используем только качественные материалы.
+                    Водоэмульсионная и акриловая покраска. Подготовка поверхности включена.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-center text-sm">
@@ -176,20 +203,20 @@ const Index = () => {
                     <h3 className="text-xl font-medium">Поклейка обоев</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">
-                    Профессиональная поклейка любых типов обоев. Идеальные стыки и долговечный результат.
+                    Флизелиновые, виниловые, жидкие обои. Идеальные стыки и долговечный результат.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                      <span>Все типы обоев</span>
+                      <span>Флизелиновые обои</span>
                     </div>
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                      <span>Идеальные стыки</span>
+                      <span>Виниловые обои</span>
                     </div>
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                      <span>Быстрое выполнение</span>
+                      <span>Жидкие обои</span>
                     </div>
                   </div>
                   <div className="mt-6 pt-4 border-t border-border">
@@ -215,7 +242,7 @@ const Index = () => {
                     <h3 className="text-xl font-medium">Декоративная штукатурка</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">
-                    Создаем уникальные текстуры и фактуры. Венецианская штукатурка, короед, барашек.
+                    Декоративная и гипсовая штукатурка. Венецианская, короед, барашек.
                   </p>
                   <div className="space-y-2">
                     <div className="flex items-center text-sm">
@@ -224,11 +251,11 @@ const Index = () => {
                     </div>
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                      <span>Фактурные покрытия</span>
+                      <span>Гипсовая штукатурка</span>
                     </div>
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                      <span>Авторские техники</span>
+                      <span>Фактурные покрытия</span>
                     </div>
                   </div>
                   <div className="mt-6 pt-4 border-t border-border">
@@ -238,34 +265,81 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
+
+          {/* Дополнительные услуги */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="hover:shadow-glow smooth-transition card-shadow">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Palette className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-medium mb-2">Шпаклевка стен</h4>
+                <p className="text-muted-foreground text-sm mb-4">Стартовая и финишная шпаклевка под покраску</p>
+                <span className="text-primary font-medium">от 400₽/м²</span>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-glow smooth-transition card-shadow">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Hammer className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-medium mb-2">Грунтовка стен</h4>
+                <p className="text-muted-foreground text-sm mb-4">Подготовка поверхности под любые покрытия</p>
+                <span className="text-primary font-medium">от 200₽/м²</span>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-glow smooth-transition card-shadow">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-6 w-6 text-primary" />
+                </div>
+                <h4 className="text-lg font-medium mb-2">Утепление стен</h4>
+                <p className="text-muted-foreground text-sm mb-4">Монтаж утеплителя и пароизоляции</p>
+                <span className="text-primary font-medium">от 1200₽/м²</span>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="gallery" className="py-20">
+      {/* Portfolio Section with Before/After */}
+      <section id="portfolio" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light mb-6">
               Наши <span className="text-gradient">работы</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Портфолио выполненных проектов - качество, которое говорит само за себя
+              Портфолио выполненных проектов с указанием адресов
             </p>
           </div>
 
+          {/* Before/After Comparison */}
+          <div className="mb-16">
+            <BeforeAfterComparison />
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[gallery1, gallery2, gallery3].map((image, index) => (
+            {[
+              { image: gallery1, title: 'Квартира на Ленина, 10', type: 'Покраска стен' },
+              { image: gallery2, title: 'ЖК "Солнечный", кв. 45', type: 'Декоративная штукатурка' },
+              { image: gallery3, title: 'ул. Пушкина, 15', type: 'Поклейка обоев' }
+            ].map((project, index) => (
               <Card key={index} className="group overflow-hidden hover:shadow-glow smooth-transition card-shadow">
                 <CardContent className="p-0">
                   <div className="relative overflow-hidden">
                     <img 
-                      src={image} 
-                      alt={`Работа ${index + 1}`}
+                      src={project.image} 
+                      alt={project.title}
                       className="w-full h-80 object-cover group-hover:scale-110 smooth-transition"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 smooth-transition"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 smooth-transition"></div>
                     <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 smooth-transition">
-                      <div className="flex items-center space-x-1">
+                      <h4 className="font-medium text-lg mb-1">{project.title}</h4>
+                      <p className="text-sm text-primary">{project.type}</p>
+                      <div className="flex items-center space-x-1 mt-2">
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                         ))}
@@ -279,9 +353,181 @@ const Index = () => {
 
           <div className="text-center">
             <Button variant="outline" size="lg" className="px-8">
-              Посмотреть все работы
+              Посмотреть все 50+ работ
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* Progress Steps Section */}
+      <section className="py-20 bg-dark-surface">
+        <div className="container mx-auto px-4">
+          <ProgressSteps />
+        </div>
+      </section>
+
+      {/* Prices Section */}
+      <section id="prices" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-light mb-6">
+              Цены и <span className="text-gradient">калькулятор</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Прозрачное ценообразование и удобный расчет стоимости
+            </p>
+          </div>
+
+          {/* Price Calculator */}
+          <div className="mb-16">
+            <PriceCalculator />
+          </div>
+
+          {/* Price Table */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { service: 'Покраска стен', price: 'от 800₽/м²', details: ['Подготовка поверхности', 'Грунтовка', 'Покраска в 2 слоя'] },
+              { service: 'Поклейка обоев', price: 'от 600₽/м²', details: ['Подготовка стен', 'Поклейка', 'Подгонка рисунка'] },
+              { service: 'Штукатурка декоративная', price: 'от 1500₽/м²', details: ['Подготовка', 'Нанесение', 'Финишная обработка'] },
+              { service: 'Шпаклевка стен', price: 'от 400₽/м²', details: ['Стартовая шпаклевка', 'Финишная шпаклевка', 'Шлифовка'] },
+              { service: 'Грунтовка стен', price: 'от 200₽/м²', details: ['Очистка поверхности', 'Грунтовка глубокого проникновения', 'Высушивание'] },
+              { service: 'Утепление стен', price: 'от 1200₽/м²', details: ['Монтаж каркаса', 'Утеплитель', 'Пароизоляция'] }
+            ].map((item, index) => (
+              <Card key={index} className="hover:shadow-glow smooth-transition card-shadow">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-medium mb-3">{item.service}</h3>
+                  <div className="text-2xl font-bold text-primary mb-4">{item.price}</div>
+                  <ul className="space-y-2">
+                    {item.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Promotions Section */}
+      <section className="py-20 bg-dark-surface">
+        <div className="container mx-auto px-4">
+          <Promotions />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-light mb-6">
+              О <span className="text-gradient">компании</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Профессиональная команда с опытом работы более 10 лет
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            <div>
+              <Card className="card-shadow">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-medium mb-6">Наша команда</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+                        <Users className="h-8 w-8 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Опытные мастера</h4>
+                        <p className="text-muted-foreground text-sm">Более 500 выполненных проектов</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+                        <Award className="h-8 w-8 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Сертифицированные специалисты</h4>
+                        <p className="text-muted-foreground text-sm">Все необходимые лицензии и документы</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
+                        <Shield className="h-8 w-8 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-medium">Гарантия качества</h4>
+                        <p className="text-muted-foreground text-sm">2 года гарантии на все виды работ</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div>
+              <Card className="card-shadow mb-6">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-medium mb-4">Отзывы клиентов</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="border-l-4 border-primary pl-4">
+                      <div className="flex items-center space-x-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                        ))}
+                      </div>
+                      <p className="text-muted-foreground mb-2">
+                        "Отличная работа! Мастера приехали вовремя, работали аккуратно. Результат превзошел ожидания."
+                      </p>
+                      <span className="text-sm font-medium">— Анна М., ул. Ленина, 10</span>
+                    </div>
+
+                    <div className="border-l-4 border-primary pl-4">
+                      <div className="flex items-center space-x-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                        ))}
+                      </div>
+                      <p className="text-muted-foreground mb-2">
+                        "Делали декоративную штукатурку в гостиной. Работа выполнена качественно, без замечаний."
+                      </p>
+                      <span className="text-sm font-medium">— Игорь С., ЖК "Солнечный"</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Certificates placeholder */}
+              <Card className="card-shadow">
+                <CardContent className="p-6">
+                  <h4 className="font-medium mb-4">Сертификаты и лицензии</h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="aspect-square bg-muted/20 rounded-lg flex items-center justify-center">
+                      <Award className="h-8 w-8 text-muted-foreground" />
+                    </div>
+                    <div className="aspect-square bg-muted/20 rounded-lg flex items-center justify-center">
+                      <Shield className="h-8 w-8 text-muted-foreground" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-dark-surface">
+        <div className="container mx-auto px-4">
+          <FAQ />
         </div>
       </section>
 
@@ -430,39 +676,60 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Paintbrush className="h-6 w-6 text-primary" />
                 <span className="text-lg font-semibold">СтенаМастер</span>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-4">
                 Профессиональная отделка стен в Москве и области. Качество, проверенное временем.
               </p>
+              <div className="flex space-x-4">
+                <Badge variant="secondary">WhatsApp</Badge>
+                <Badge variant="secondary">Telegram</Badge>
+              </div>
             </div>
             <div>
               <h4 className="font-medium mb-4">Услуги</h4>
-              <ul className="space-y-2 text-muted-foreground">
+              <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>Покраска стен</li>
                 <li>Поклейка обоев</li>
                 <li>Декоративная штукатурка</li>
-                <li>Подготовка поверхности</li>
+                <li>Шпаклевка стен</li>
+                <li>Грунтовка стен</li>
+                <li>Утепление стен</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-medium mb-4">Зона работы</h4>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li>Москва (все районы)</li>
+                <li>Московская область</li>
+                <li>Радиус до 50 км от МКАД</li>
+                <li>Выезд замерщика бесплатно</li>
               </ul>
             </div>
             <div>
               <h4 className="font-medium mb-4">Контакты</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>+7 (495) 123-45-67</li>
-                <li>info@stenamaster.ru</li>
-                <li>г. Москва, ул. Примерная, 123</li>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li>📞 +7 (495) 123-45-67</li>
+                <li>📧 info@stenamaster.ru</li>
+                <li>📍 г. Москва, ул. Примерная, 123</li>
+                <li>🕒 Ежедневно 8:00 - 20:00</li>
               </ul>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground">
-            <p>&copy; 2024 СтенаМастер. Все права защищены.</p>
+            <p>&copy; 2024 СтенаМастер. Все права защищены. | 
+              <button className="ml-2 hover:text-primary smooth-transition">Политика конфиденциальности</button>
+            </p>
           </div>
         </div>
       </footer>
+
+      {/* Callback Widget */}
+      <CallbackWidget />
     </div>
   );
 };
