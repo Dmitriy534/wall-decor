@@ -14,6 +14,11 @@ import ProgressSteps from "@/components/ProgressSteps";
 import FAQ from "@/components/FAQ";
 import CallbackWidget from "@/components/CallbackWidget";
 import Promotions from "@/components/Promotions";
+import Team from "@/components/Team";
+import Partners from "@/components/Partners";
+import Reviews from "@/components/Reviews";
+import SocialContacts from "@/components/SocialContacts";
+import ExpandableGallery from "@/components/ExpandableGallery";
 
 // Import images
 import heroBg from "@/assets/hero-bg.jpg";
@@ -351,52 +356,8 @@ const Index = () => {
             <BeforeAfterComparison />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[
-              { image: gallery1, title: 'Квартира на Ленина, 10', type: 'Покраска стен' },
-              { image: gallery2, title: 'ЖК "Солнечный", кв. 45', type: 'Декоративная штукатурка' },
-              { image: gallery3, title: 'ул. Пушкина, 15', type: 'Поклейка обоев' }
-            ].map((project, index) => (
-              <Card key={index} className="group overflow-hidden hover:shadow-glow smooth-transition card-shadow">
-                <CardContent className="p-0">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-80 object-cover group-hover:scale-110 smooth-transition"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 smooth-transition"></div>
-                    <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 smooth-transition">
-                      <h4 className="font-medium text-lg mb-1">{project.title}</h4>
-                      <p className="text-sm text-primary">{project.type}</p>
-                      <div className="flex items-center space-x-1 mt-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8"
-              onClick={() => {
-                // Создаем модальное окно для показа всех работ
-                toast({
-                  title: "Показываем все работы",
-                  description: "Скоро здесь будет галерея всех 50+ выполненных проектов с фильтрами по типам работ и адресам.",
-                });
-              }}
-            >
-              Посмотреть все 50+ работ
-            </Button>
-          </div>
+          {/* Expandable Gallery */}
+          <ExpandableGallery />
         </div>
       </section>
 
@@ -460,110 +421,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
-              О <span className="text-gradient">компании</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Профессиональная команда с опытом работы более 10 лет
-            </p>
-          </div>
+      {/* Team Section */}
+      <Team />
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <Card className="card-shadow">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-medium mb-6">Наша команда</h3>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-                        <Users className="h-8 w-8 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">Опытные мастера</h4>
-                        <p className="text-muted-foreground text-sm">Более 500 выполненных проектов</p>
-                      </div>
-                    </div>
+      {/* Partners Section */}
+      <Partners />
 
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-                        <Award className="h-8 w-8 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">Сертифицированные специалисты</h4>
-                        <p className="text-muted-foreground text-sm">Все необходимые лицензии и документы</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-                        <Shield className="h-8 w-8 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium">Гарантия качества</h4>
-                        <p className="text-muted-foreground text-sm">2 года гарантии на все виды работ</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div>
-              <Card className="card-shadow mb-6">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-medium mb-4">Отзывы клиентов</h3>
-                  
-                  <div className="space-y-6">
-                    <div className="border-l-4 border-primary pl-4">
-                      <div className="flex items-center space-x-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                        ))}
-                      </div>
-                      <p className="text-muted-foreground mb-2">
-                        "Отличная работа! Мастера приехали вовремя, работали аккуратно. Результат превзошел ожидания."
-                      </p>
-                      <span className="text-sm font-medium">— Анна М., ул. Ленина, 10</span>
-                    </div>
-
-                    <div className="border-l-4 border-primary pl-4">
-                      <div className="flex items-center space-x-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                        ))}
-                      </div>
-                      <p className="text-muted-foreground mb-2">
-                        "Делали декоративную штукатурку в гостиной. Работа выполнена качественно, без замечаний."
-                      </p>
-                      <span className="text-sm font-medium">— Игорь С., ЖК "Солнечный"</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Certificates placeholder */}
-              <Card className="card-shadow">
-                <CardContent className="p-6">
-                  <h4 className="font-medium mb-4">Сертификаты и лицензии</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="aspect-square bg-muted/20 rounded-lg flex items-center justify-center">
-                      <Award className="h-8 w-8 text-muted-foreground" />
-                    </div>
-                    <div className="aspect-square bg-muted/20 rounded-lg flex items-center justify-center">
-                      <Shield className="h-8 w-8 text-muted-foreground" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Reviews Section */}
+      <Reviews />
 
       {/* FAQ Section */}
       <section className="py-20 bg-dark-surface">
@@ -571,6 +436,9 @@ const Index = () => {
           <FAQ />
         </div>
       </section>
+
+      {/* Social Contacts Section */}
+      <SocialContacts />
 
       {/* Contact Form Section */}
       <section id="contact" className="py-20 bg-dark-surface">

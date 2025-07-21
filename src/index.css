@@ -7,51 +7,54 @@
 /* Design system for wall finishing services website */
 @layer base {
   :root {
-    /* Dark theme colors */
-    --background: 220 16% 8%;
-    --foreground: 210 40% 98%;
+    /* Moody Blues theme colors */
+    --background: 215 16% 8%;
+    --foreground: 215 20% 95%;
 
-    --card: 220 14% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 15% 12%;
+    --card-foreground: 215 20% 95%;
 
-    --popover: 220 14% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 15% 12%;
+    --popover-foreground: 215 20% 95%;
 
-    --primary: 43 100% 70%;
-    --primary-foreground: 220 16% 8%;
+    --primary: 210 20% 57%;
+    --primary-foreground: 215 16% 8%;
 
-    --secondary: 220 12% 15%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 15% 18%;
+    --secondary-foreground: 215 20% 95%;
 
-    --muted: 220 12% 15%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 15% 18%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 43 100% 70%;
-    --accent-foreground: 220 16% 8%;
+    --accent: 210 20% 57%;
+    --accent-foreground: 215 16% 8%;
 
     --destructive: 0 62.8% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 215 20% 95%;
 
-    --border: 220 12% 18%;
-    --input: 220 12% 18%;
-    --ring: 43 100% 70%;
+    --border: 215 15% 22%;
+    --input: 215 15% 22%;
+    --ring: 210 20% 57%;
 
     --radius: 0.75rem;
 
-    /* Custom colors */
-    --gold: 43 100% 70%;
-    --gold-foreground: 220 16% 8%;
-    --dark-surface: 220 14% 10%;
-    --darker-surface: 220 16% 8%;
+    /* Custom moody blues colors */
+    --midnight-blue: 215 16% 8%;
+    --slate-blue: 210 20% 57%;
+    --charcoal-gray: 215 10% 18%;
+    --silver: 210 3% 70%;
+    
+    --dark-surface: 215 15% 12%;
+    --darker-surface: 215 16% 8%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(43 100% 70%), hsl(45 100% 60%));
-    --gradient-dark: linear-gradient(135deg, hsl(220 16% 8%), hsl(220 14% 10%));
-    --gradient-overlay: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+    --gradient-primary: linear-gradient(135deg, hsl(210 20% 57%), hsl(210 15% 45%));
+    --gradient-dark: linear-gradient(135deg, hsl(215 16% 8%), hsl(215 15% 12%));
+    --gradient-overlay: linear-gradient(rgba(26,29,41,0.8), rgba(26,29,41,0.4));
 
     /* Shadows */
-    --shadow-glow: 0 0 30px hsl(43 100% 70% / 0.3);
-    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 30px hsl(210 20% 57% / 0.3);
+    --shadow-card: 0 8px 32px rgba(26, 29, 41, 0.4);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
