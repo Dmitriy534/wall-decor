@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,6 +10,20 @@ const PriceCalculator = () => {
   const [area, setArea] = useState('');
   const [selectedService, setSelectedService] = useState('');
   const [calculatedPrice, setCalculatedPrice] = useState(null);
+  
+  // Auto-calculate when inputs change
+  const calculatePrice = () => {
+    if (!area || !selectedService) {
+      setCalculatedPrice(null);
+      return;
+    }
+    
+    const service = services.find(s => s.id === selectedService);
+    if (service) {
+      const total = parseFloat(area) * service.price;
+      setCalculatedPrice(total);
+    }
+  };
 
   const services = [
     { id: 'painting', name: 'Покраска стен', price: 800, unit: 'м²' },
@@ -18,15 +33,10 @@ const PriceCalculator = () => {
     { id: 'priming', name: 'Грунтовка стен', price: 200, unit: 'м²' },
   ];
 
-  const calculatePrice = () => {
-    if (!area || !selectedService) return;
-    
-    const service = services.find(s => s.id === selectedService);
-    if (service) {
-      const total = parseFloat(area) * service.price;
-      setCalculatedPrice(total);
-    }
-  };
+  // Effect to auto-calculate when inputs change
+  React.useEffect(() => {
+    calculatePrice();
+  }, [area, selectedService]);
 
   const formatPrice = (price) => {
     return new Intl.NumberFormat('ru-RU').format(price);
@@ -83,14 +93,9 @@ const PriceCalculator = () => {
           </div>
         </div>
 
-        <Button 
-          onClick={calculatePrice}
-          size="lg"
-          className="w-full glow-effect"
-          disabled={!area || !selectedService}
-        >
-          Рассчитать стоимость
-        </Button>
+        <div className="text-center text-sm text-muted-foreground">
+          Стоимость рассчитывается автоматически при вводе данных
+        </div>
 
         {calculatedPrice && (
           <Card className="bg-primary/10 border-primary/20">

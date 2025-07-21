@@ -76,7 +76,19 @@ const Index = () => {
             <a href="#about" className="smooth-transition hover:text-primary">О нас</a>
             <a href="#contact" className="smooth-transition hover:text-primary">Контакты</a>
           </nav>
-          <Button variant="default" className="hidden md:inline-flex">
+          <Button 
+            variant="default" 
+            className="hidden md:inline-flex"
+            onClick={() => {
+              const widget = document.querySelector('[data-callback-widget]');
+              if (widget) {
+                (widget as HTMLElement).click();
+              } else {
+                // Scroll to contact form as fallback
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             <Phone className="mr-2 h-4 w-4" />
             Вызвать мастера
           </Button>
@@ -107,28 +119,46 @@ const Index = () => {
               Гарантия на все виды работ.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="px-8 py-6 text-lg glow-effect">
+              <Button 
+                size="lg" 
+                className="px-8 py-6 text-lg glow-effect"
+                onClick={() => {
+                  document.getElementById('prices')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 <Phone className="mr-2 h-5 w-5" />
                 Рассчитать стоимость
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="px-8 py-6 text-lg"
+                onClick={() => {
+                  const widget = document.querySelector('[data-callback-widget]');
+                  if (widget) {
+                    (widget as HTMLElement).click();
+                  } else {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 Вызвать замерщика
               </Button>
             </div>
             
             {/* Преимущества */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
-              <div className="flex items-center justify-center space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4">
-                <Shield className="h-6 w-6 text-primary" />
-                <span className="text-lg">Без пыли и грязи</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 max-w-4xl mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4 text-center sm:text-left">
+                <Shield className="h-6 w-6 text-primary flex-shrink-0" />
+                <span className="text-base sm:text-lg">Без пыли и грязи</span>
               </div>
-              <div className="flex items-center justify-center space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4">
-                <Award className="h-6 w-6 text-primary" />
-                <span className="text-lg">Гарантия 2 года</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4 text-center sm:text-left">
+                <Award className="h-6 w-6 text-primary flex-shrink-0" />
+                <span className="text-base sm:text-lg">Гарантия 2 года</span>
               </div>
-              <div className="flex items-center justify-center space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4">
-                <Clock className="h-6 w-6 text-primary" />
-                <span className="text-lg">Точно в срок</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 bg-background/10 backdrop-blur-sm rounded-lg p-4 text-center sm:text-left">
+                <Clock className="h-6 w-6 text-primary flex-shrink-0" />
+                <span className="text-base sm:text-lg">Точно в срок</span>
               </div>
             </div>
           </div>
@@ -267,7 +297,7 @@ const Index = () => {
           </div>
 
           {/* Дополнительные услуги */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="hover:shadow-glow smooth-transition card-shadow">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -352,7 +382,18 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="outline" size="lg" className="px-8">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="px-8"
+              onClick={() => {
+                // Создаем модальное окно для показа всех работ
+                toast({
+                  title: "Показываем все работы",
+                  description: "Скоро здесь будет галерея всех 50+ выполненных проектов с фильтрами по типам работ и адресам.",
+                });
+              }}
+            >
               Посмотреть все 50+ работ
             </Button>
           </div>

@@ -39,6 +39,7 @@ const CallbackWidget = () => {
       {!isOpen && (
         <div className="fixed bottom-6 right-6 z-50">
           <Button
+            data-callback-widget
             onClick={() => setIsOpen(true)}
             size="lg"
             className="rounded-full h-16 w-16 p-0 shadow-lg hover:shadow-xl smooth-transition group"
