@@ -72,9 +72,12 @@ export default {
 				'card': 'var(--shadow-card)',
 			},
 			animation: {
-				'fade-in': 'fadeIn 0.6s ease-out',
-				'slide-up': 'slideUp 0.6s ease-out',
-				'scale-in': 'scaleIn 0.3s ease-out',
+				'fade-in': 'fadeIn 0.8s ease-out',
+				'slide-up': 'slideUp 0.8s ease-out',
+				'scale-in': 'scaleIn 0.6s ease-out',
+				'slide-in-left': 'slideInLeft 0.8s ease-out',
+				'slide-in-right': 'slideInRight 0.8s ease-out',
+				'bounce-in': 'bounceIn 0.6s ease-out',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -108,6 +111,20 @@ export default {
 				},
 				'scaleIn': {
 					'0%': { opacity: '0', transform: 'scale(0.95)' },
+					'100%': { opacity: '1', transform: 'scale(1)' }
+				},
+				'slideInLeft': {
+					'0%': { opacity: '0', transform: 'translateX(-50px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'slideInRight': {
+					'0%': { opacity: '0', transform: 'translateX(50px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'bounceIn': {
+					'0%': { opacity: '0', transform: 'scale(0.3)' },
+					'50%': { opacity: '1', transform: 'scale(1.05)' },
+					'70%': { transform: 'scale(0.9)' },
 					'100%': { opacity: '1', transform: 'scale(1)' }
 				}
 			}

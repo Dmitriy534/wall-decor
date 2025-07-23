@@ -19,6 +19,8 @@ import Partners from "@/components/Partners";
 import Reviews from "@/components/Reviews";
 import SocialContacts from "@/components/SocialContacts";
 import ExpandableGallery from "@/components/ExpandableGallery";
+import MobileMenu from "@/components/MobileMenu";
+import CompanyDescription from "@/components/CompanyDescription";
 
 // Import images
 import heroBg from "@/assets/hero-bg.jpg";
@@ -78,7 +80,7 @@ const Index = () => {
             <a href="#services" className="smooth-transition hover:text-primary">Услуги</a>
             <a href="#portfolio" className="smooth-transition hover:text-primary">Портфолио</a>
             <a href="#prices" className="smooth-transition hover:text-primary">Цены</a>
-            <a href="#about" className="smooth-transition hover:text-primary">О нас</a>
+            <a href="#company" className="smooth-transition hover:text-primary">О нас</a>
             <a href="#contact" className="smooth-transition hover:text-primary">Контакты</a>
           </nav>
           <Button 
@@ -97,6 +99,7 @@ const Index = () => {
             <Phone className="mr-2 h-4 w-4" />
             Вызвать мастера
           </Button>
+          <MobileMenu />
         </div>
       </header>
 
@@ -183,7 +186,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="group hover:shadow-glow smooth-transition card-shadow">
+            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-slide-in-left">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
@@ -222,11 +225,11 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-glow smooth-transition card-shadow">
+            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-fade-in">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
-                    src={serviceWallpaper} 
+                    src={serviceWallpaper}
                     alt="Поклейка обоев" 
                     className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                   />
@@ -261,11 +264,11 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-glow smooth-transition card-shadow">
+            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-slide-in-right">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
-                    src={servicePlaster} 
+                    src={servicePlaster}
                     alt="Декоративная штукатурка" 
                     className="w-full h-64 object-cover group-hover:scale-105 smooth-transition"
                   />
@@ -302,8 +305,8 @@ const Index = () => {
           </div>
 
           {/* Дополнительные услуги */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="hover:shadow-glow smooth-transition card-shadow">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-slide-up">
+            <Card className="hover:shadow-glow smooth-transition card-shadow animate-bounce-in">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Palette className="h-6 w-6 text-primary" />
@@ -314,7 +317,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-glow smooth-transition card-shadow">
+            <Card className="hover:shadow-glow smooth-transition card-shadow animate-bounce-in" style={{ animationDelay: '0.2s' }}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Hammer className="h-6 w-6 text-primary" />
@@ -325,7 +328,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-glow smooth-transition card-shadow">
+            <Card className="hover:shadow-glow smooth-transition card-shadow animate-bounce-in" style={{ animationDelay: '0.4s' }}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-6 w-6 text-primary" />
@@ -386,7 +389,7 @@ const Index = () => {
           </div>
 
           {/* Price Table */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
             {[
               { service: 'Покраска стен', price: 'от 800₽/м²', details: ['Подготовка поверхности', 'Грунтовка', 'Покраска в 2 слоя'] },
               { service: 'Поклейка обоев', price: 'от 600₽/м²', details: ['Подготовка стен', 'Поклейка', 'Подгонка рисунка'] },
@@ -395,7 +398,7 @@ const Index = () => {
               { service: 'Грунтовка стен', price: 'от 200₽/м²', details: ['Очистка поверхности', 'Грунтовка глубокого проникновения', 'Высушивание'] },
               { service: 'Утепление стен', price: 'от 1200₽/м²', details: ['Монтаж каркаса', 'Утеплитель', 'Пароизоляция'] }
             ].map((item, index) => (
-              <Card key={index} className="hover:shadow-glow smooth-transition card-shadow">
+              <Card key={index} className="hover:shadow-glow smooth-transition card-shadow animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-medium mb-3">{item.service}</h3>
                   <div className="text-2xl font-bold text-primary mb-4">{item.price}</div>
@@ -413,6 +416,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Company Description Section */}
+      <CompanyDescription />
 
       {/* Promotions Section */}
       <section className="py-20 bg-dark-surface">

@@ -43,16 +43,25 @@ const PriceCalculator = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto card-shadow">
-      <CardHeader className="text-center">
-        <CardTitle className="flex items-center justify-center gap-2 text-2xl">
-          <Calculator className="h-6 w-6 text-primary" />
-          Калькулятор стоимости
-        </CardTitle>
-        <p className="text-muted-foreground">
-          Рассчитайте примерную стоимость работ
+    <div className="w-full max-w-2xl mx-auto space-y-6">
+      {/* Disclaimer */}
+      <div className="text-center bg-primary/10 border border-primary/20 rounded-lg p-4 animate-fade-in">
+        <p className="text-sm text-muted-foreground">
+          <strong className="text-primary">Внимание:</strong> Цены услуг и материалов являются приблизительными 
+          и могут отличаться после согласования с мастером и осмотра объекта.
         </p>
-      </CardHeader>
+      </div>
+
+      <Card className="card-shadow animate-scale-in">
+        <CardHeader className="text-center">
+          <CardTitle className="flex items-center justify-center gap-2 text-2xl">
+            <Calculator className="h-6 w-6 text-primary" />
+            Калькулятор стоимости
+          </CardTitle>
+          <p className="text-muted-foreground">
+            Рассчитайте примерную стоимость работ
+          </p>
+        </CardHeader>
       <CardContent className="space-y-6">
         <div>
           <label className="block text-sm font-medium mb-2">
@@ -117,6 +126,7 @@ const PriceCalculator = () => {
         )}
       </CardContent>
     </Card>
+    </div>
   );
 };
 
