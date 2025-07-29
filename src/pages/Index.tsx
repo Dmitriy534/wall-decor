@@ -73,19 +73,19 @@ const Index = () => {
       <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Paintbrush className="h-8 w-8 text-primary" />
-            <span className="text-xl font-semibold">СтенаМастер</span>
+            <Paintbrush className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+            <span className="text-lg md:text-xl font-semibold">СтенаМастер</span>
           </div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#services" className="smooth-transition hover:text-primary">Услуги</a>
-            <a href="#portfolio" className="smooth-transition hover:text-primary">Портфолио</a>
-            <a href="#prices" className="smooth-transition hover:text-primary">Цены</a>
-            <a href="#company" className="smooth-transition hover:text-primary">О нас</a>
-            <a href="#contact" className="smooth-transition hover:text-primary">Контакты</a>
+          <nav className="hidden lg:flex space-x-6 xl:space-x-8">
+            <a href="#services" className="smooth-transition hover:text-primary text-sm lg:text-base">Услуги</a>
+            <a href="#portfolio" className="smooth-transition hover:text-primary text-sm lg:text-base">Портфолио</a>
+            <a href="#prices" className="smooth-transition hover:text-primary text-sm lg:text-base">Цены</a>
+            <a href="#company" className="smooth-transition hover:text-primary text-sm lg:text-base">О нас</a>
+            <a href="#contact" className="smooth-transition hover:text-primary text-sm lg:text-base">Контакты</a>
           </nav>
           <Button 
             variant="default" 
-            className="hidden md:inline-flex"
+            className="hidden lg:inline-flex text-sm px-4 py-2"
             onClick={() => {
               const widget = document.querySelector('[data-callback-widget]');
               if (widget) {
@@ -592,22 +592,22 @@ const Index = () => {
       <footer className="py-8 md:py-12 border-t border-border">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <div>
+            <div className="col-span-1 sm:col-span-2 lg:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
-                <Paintbrush className="h-6 w-6 text-primary" />
-                <span className="text-lg font-semibold">СтенаМастер</span>
+                <Paintbrush className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+                <span className="text-base md:text-lg font-semibold">СтенаМастер</span>
               </div>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-4 text-sm md:text-base leading-relaxed">
                 Профессиональная отделка стен в Москве и области. Качество, проверенное временем.
               </p>
-              <div className="flex space-x-4">
-                <Badge variant="secondary">WhatsApp</Badge>
-                <Badge variant="secondary">Telegram</Badge>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="secondary" className="text-xs md:text-sm">WhatsApp</Badge>
+                <Badge variant="secondary" className="text-xs md:text-sm">Telegram</Badge>
               </div>
             </div>
             <div>
-              <h4 className="font-medium mb-4">Услуги</h4>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <h4 className="font-medium mb-3 md:mb-4 text-sm md:text-base">Услуги</h4>
+              <ul className="space-y-1 md:space-y-2 text-muted-foreground text-xs md:text-sm">
                 <li>Покраска стен</li>
                 <li>Поклейка обоев</li>
                 <li>Декоративная штукатурка</li>
@@ -617,8 +617,8 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-4">Зона работы</h4>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <h4 className="font-medium mb-3 md:mb-4 text-sm md:text-base">Зона работы</h4>
+              <ul className="space-y-1 md:space-y-2 text-muted-foreground text-xs md:text-sm">
                 <li>Москва (все районы)</li>
                 <li>Московская область</li>
                 <li>Радиус до 50 км от МКАД</li>
@@ -626,8 +626,8 @@ const Index = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-4">Контакты</h4>
-              <ul className="space-y-2 text-muted-foreground text-sm">
+              <h4 className="font-medium mb-3 md:mb-4 text-sm md:text-base">Контакты</h4>
+              <ul className="space-y-1 md:space-y-2 text-muted-foreground text-xs md:text-sm">
                 <li>📞 +7 (495) 123-45-67</li>
                 <li>📧 info@stenamaster.ru</li>
                 <li>📍 г. Москва, ул. Примерная, 123</li>
@@ -635,8 +635,8 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground">
-            <p>&copy; 2024 СтенаМастер. Все права защищены. | 
+          <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-border text-center text-muted-foreground">
+            <p className="text-xs md:text-sm">&copy; 2024 СтенаМастер. Все права защищены. | 
               <button className="ml-2 hover:text-primary smooth-transition">Политика конфиденциальности</button>
             </p>
           </div>
