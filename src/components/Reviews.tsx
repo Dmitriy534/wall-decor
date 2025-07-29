@@ -76,18 +76,18 @@ const Reviews = () => {
   };
 
   return (
-    <section id="reviews" className="py-20 bg-dark-surface">
+    <section id="reviews" className="py-12 md:py-20 bg-dark-surface">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-light mb-6">
+        <div className="text-center mb-8 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6">
             Отзывы <span className="text-gradient">клиентов</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Более 500 довольных клиентов доверили нам отделку своих домов
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {reviews.map((review) => (
             <Card key={review.id} className="group hover:shadow-glow smooth-transition card-shadow">
               <CardContent className="p-6">
@@ -124,9 +124,9 @@ const Reviews = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <div className="bg-background rounded-lg p-8 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center gap-8 mb-4">
+        <div className="text-center mt-8 md:mt-12">
+          <div className="bg-background rounded-lg p-6 md:p-8 max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-8 mb-4">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">4.9</div>
                 <div className="flex items-center justify-center gap-1 mb-1">

@@ -174,18 +174,18 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-dark-surface">
+      <section id="services" className="py-12 md:py-20 bg-dark-surface">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
+          <div className="text-center mb-8 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6">
               Наши <span className="text-gradient">услуги</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Полный спектр работ по отделке стен от профессиональных мастеров
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
             <Card className="group hover:shadow-glow smooth-transition card-shadow animate-slide-in-left">
               <CardContent className="p-0">
                 <div className="relative overflow-hidden rounded-t-lg">
@@ -305,7 +305,7 @@ const Index = () => {
           </div>
 
           {/* Дополнительные услуги */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-slide-up">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 animate-slide-up">
             <Card className="hover:shadow-glow smooth-transition card-shadow animate-bounce-in">
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -343,19 +343,19 @@ const Index = () => {
       </section>
 
       {/* Portfolio Section with Before/After */}
-      <section id="portfolio" className="py-20">
+      <section id="portfolio" className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
+          <div className="text-center mb-8 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6">
               Наши <span className="text-gradient">работы</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Портфолио выполненных проектов с указанием адресов
             </p>
           </div>
 
           {/* Before/After Comparison */}
-          <div className="mb-16">
+          <div className="mb-8 md:mb-16">
             <BeforeAfterComparison />
           </div>
 
@@ -365,31 +365,31 @@ const Index = () => {
       </section>
 
       {/* Progress Steps Section */}
-      <section className="py-20 bg-dark-surface">
+      <section className="py-12 md:py-20 bg-dark-surface">
         <div className="container mx-auto px-4">
           <ProgressSteps />
         </div>
       </section>
 
       {/* Prices Section */}
-      <section id="prices" className="py-20">
+      <section id="prices" className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light mb-6">
+          <div className="text-center mb-8 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6">
               Цены и <span className="text-gradient">калькулятор</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Прозрачное ценообразование и удобный расчет стоимости
             </p>
           </div>
 
           {/* Price Calculator */}
-          <div className="mb-16">
+          <div className="mb-8 md:mb-16">
             <PriceCalculator />
           </div>
 
           {/* Price Table */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 animate-fade-in">
             {[
               { service: 'Покраска стен', price: 'от 800₽/м²', details: ['Подготовка поверхности', 'Грунтовка', 'Покраска в 2 слоя'] },
               { service: 'Поклейка обоев', price: 'от 600₽/м²', details: ['Подготовка стен', 'Поклейка', 'Подгонка рисунка'] },
@@ -421,7 +421,7 @@ const Index = () => {
       <CompanyDescription />
 
       {/* Promotions Section */}
-      <section className="py-20 bg-dark-surface">
+      <section className="py-12 md:py-20 bg-dark-surface">
         <div className="container mx-auto px-4">
           <Promotions />
         </div>
@@ -437,7 +437,7 @@ const Index = () => {
       <Reviews />
 
       {/* FAQ Section */}
-      <section className="py-20 bg-dark-surface">
+      <section className="py-12 md:py-20 bg-dark-surface">
         <div className="container mx-auto px-4">
           <FAQ />
         </div>
@@ -447,23 +447,23 @@ const Index = () => {
       <SocialContacts />
 
       {/* Contact Form Section */}
-      <section id="contact" className="py-20 bg-dark-surface">
+      <section id="contact" className="py-12 md:py-20 bg-dark-surface">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-light mb-6">
+            <div className="text-center mb-8 md:mb-16 animate-fade-in">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6">
                 Получить <span className="text-gradient">консультацию</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
                 Оставьте заявку и мы рассчитаем стоимость работ бесплатно
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
               <Card className="card-shadow">
                 <CardContent className="p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium mb-2">Ваше имя</label>
                         <Input
@@ -589,9 +589,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border">
+      <footer className="py-8 md:py-12 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Paintbrush className="h-6 w-6 text-primary" />

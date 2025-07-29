@@ -81,8 +81,8 @@ const ProgressSteps = () => {
 
   return (
     <div className="w-full">
-      <div className="text-center mb-12">
-        <h3 className="text-3xl font-light mb-4">
+      <div className="text-center mb-8 md:mb-12">
+        <h3 className="text-2xl md:text-3xl font-light mb-4">
           Этапы <span className="text-gradient">работы</span>
         </h3>
         <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -90,7 +90,7 @@ const ProgressSteps = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {steps.map((step, index) => {
           const Icon = step.icon;
           return (
@@ -148,7 +148,7 @@ const ProgressSteps = () => {
       </div>
 
       {/* Общее время */}
-      <div className="text-center mt-8">
+      <div className="text-center mt-6 md:mt-8">
         <Card className="inline-block card-shadow">
           <CardContent className="p-4">
             <div className="flex items-center gap-2">

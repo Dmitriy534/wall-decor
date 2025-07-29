@@ -34,18 +34,18 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="py-20 bg-dark-surface">
+    <section id="team" className="py-12 md:py-20 bg-dark-surface">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-light mb-6">
+        <div className="text-center mb-8 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-4 md:mb-6">
             Наша <span className="text-gradient">команда</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Профессиональные мастера с многолетним опытом работы
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {teamMembers.map((member) => (
             <Card key={member.id} className="group hover:shadow-glow smooth-transition card-shadow overflow-hidden">
               <CardContent className="p-0">
@@ -53,7 +53,7 @@ const Team = () => {
                   <img 
                     src={member.photo} 
                     alt={member.name}
-                    className="w-full h-80 object-cover group-hover:scale-105 smooth-transition"
+                    className="w-full h-64 md:h-80 object-cover group-hover:scale-105 smooth-transition"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">

@@ -100,8 +100,8 @@ const Promotions = () => {
 
   return (
     <div className="w-full">
-      <div className="text-center mb-12">
-        <h3 className="text-3xl font-light mb-4">
+      <div className="text-center mb-8 md:mb-12">
+        <h3 className="text-2xl md:text-3xl font-light mb-4">
           Акции и <span className="text-gradient">спецпредложения</span>
         </h3>
         <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -109,7 +109,7 @@ const Promotions = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
         {promotions.map((promo) => {
           const Icon = promo.icon;
           return (
@@ -188,7 +188,7 @@ const Promotions = () => {
       </div>
 
       {/* Дополнительная информация */}
-      <Card className="mt-8 card-shadow bg-primary/5 border-primary/20">
+      <Card className="mt-6 md:mt-8 card-shadow bg-primary/5 border-primary/20">
         <CardContent className="p-6 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Calendar className="h-5 w-5 text-primary" />
