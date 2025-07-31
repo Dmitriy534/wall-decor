@@ -7,7 +7,7 @@
 /* Design system for wall finishing services website */
 @layer base {
   :root {
-    /* Moody Blues theme colors */
+    /* Default: Moody Blues theme colors */
     --background: 215 16% 8%;
     --foreground: 215 20% 95%;
 
@@ -58,6 +58,183 @@
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Palette 1: Маренго и фисташковый торт */
+  [data-theme="marengo-pistachio"] {
+    --background: 0 0% 20%;
+    --foreground: 120 25% 95%;
+
+    --card: 0 0% 25%;
+    --card-foreground: 120 25% 95%;
+
+    --popover: 0 0% 25%;
+    --popover-foreground: 120 25% 95%;
+
+    --primary: 75 35% 65%;
+    --primary-foreground: 0 0% 20%;
+
+    --secondary: 0 0% 30%;
+    --secondary-foreground: 120 25% 95%;
+
+    --muted: 0 0% 30%;
+    --muted-foreground: 75 20% 70%;
+
+    --accent: 75 35% 65%;
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 62.8% 60%;
+    --destructive-foreground: 120 25% 95%;
+
+    --border: 0 0% 35%;
+    --input: 0 0% 35%;
+    --ring: 75 35% 65%;
+
+    /* Custom colors */
+    --marengo: 0 0% 20%;
+    --pistachio-cake: 75 35% 65%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(75 35% 65%), hsl(75 25% 55%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 20%), hsl(0 0% 25%));
+    --gradient-overlay: linear-gradient(rgba(51,51,51,0.8), rgba(51,51,51,0.4));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(75 35% 65% / 0.3);
+    --shadow-card: 0 8px 32px rgba(51, 51, 51, 0.4);
+  }
+
+  /* Palette 2: Пастельно коричневый с светлым бежевым */
+  [data-theme="pastel-brown-beige"] {
+    --background: 30 15% 12%;
+    --foreground: 35 25% 92%;
+
+    --card: 30 12% 18%;
+    --card-foreground: 35 25% 92%;
+
+    --popover: 30 12% 18%;
+    --popover-foreground: 35 25% 92%;
+
+    --primary: 35 40% 75%;
+    --primary-foreground: 30 15% 12%;
+
+    --secondary: 30 15% 25%;
+    --secondary-foreground: 35 25% 92%;
+
+    --muted: 30 15% 25%;
+    --muted-foreground: 35 20% 65%;
+
+    --accent: 35 40% 75%;
+    --accent-foreground: 30 15% 12%;
+
+    --destructive: 0 62.8% 60%;
+    --destructive-foreground: 35 25% 92%;
+
+    --border: 30 15% 30%;
+    --input: 30 15% 30%;
+    --ring: 35 40% 75%;
+
+    /* Custom colors */
+    --pastel-brown: 30 15% 25%;
+    --light-beige: 35 40% 75%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(35 40% 75%), hsl(35 30% 65%));
+    --gradient-dark: linear-gradient(135deg, hsl(30 15% 12%), hsl(30 12% 18%));
+    --gradient-overlay: linear-gradient(rgba(46,37,31,0.8), rgba(46,37,31,0.4));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(35 40% 75% / 0.3);
+    --shadow-card: 0 8px 32px rgba(46, 37, 31, 0.4);
+  }
+
+  /* Palette 3: Черный и белый */
+  [data-theme="black-white"] {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 85%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 62.8% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 22%;
+    --ring: 0 0% 85%;
+
+    /* Custom colors */
+    --pure-black: 0 0% 8%;
+    --pure-white: 0 0% 98%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 85%), hsl(0 0% 75%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-overlay: linear-gradient(rgba(20,20,20,0.8), rgba(20,20,20,0.4));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(0 0% 85% / 0.3);
+    --shadow-card: 0 8px 32px rgba(20, 20, 20, 0.4);
+  }
+
+  /* Palette 4: Синие оттенки */
+  [data-theme="blue-shades"] {
+    --background: 220 30% 8%;
+    --foreground: 210 25% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 25% 95%;
+
+    --primary: 210 60% 65%;
+    --primary-foreground: 220 30% 8%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 210 25% 95%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 210 20% 70%;
+
+    --accent: 210 60% 65%;
+    --accent-foreground: 220 30% 8%;
+
+    --destructive: 0 62.8% 60%;
+    --destructive-foreground: 210 25% 95%;
+
+    --border: 220 25% 22%;
+    --input: 220 25% 22%;
+    --ring: 210 60% 65%;
+
+    /* Custom colors */
+    --deep-blue: 220 30% 8%;
+    --azure-blue: 210 60% 65%;
+    --navy-blue: 220 25% 18%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 60% 65%), hsl(210 50% 55%));
+    --gradient-dark: linear-gradient(135deg, hsl(220 30% 8%), hsl(220 25% 12%));
+    --gradient-overlay: linear-gradient(rgba(20,28,41,0.8), rgba(20,28,41,0.4));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(210 60% 65% / 0.3);
+    --shadow-card: 0 8px 32px rgba(20, 28, 41, 0.4);
   }
 }
 
