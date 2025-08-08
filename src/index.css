@@ -236,6 +236,186 @@
     --shadow-glow: 0 0 30px hsl(210 60% 65% / 0.3);
     --shadow-card: 0 8px 32px rgba(20, 28, 41, 0.4);
   }
+
+  /* Palette 5: Светлая шоколадно-кремовая (на основе логотипа) */
+  [data-theme="light-chocolate-cream"] {
+    --background: 30 25% 88%;
+    --foreground: 25 30% 15%;
+
+    --card: 30 20% 92%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 30 20% 92%;
+    --popover-foreground: 25 30% 15%;
+
+    --primary: 25 45% 45%;
+    --primary-foreground: 30 25% 88%;
+
+    --secondary: 30 15% 80%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 30 15% 82%;
+    --muted-foreground: 25 20% 40%;
+
+    --accent: 25 45% 45%;
+    --accent-foreground: 30 25% 88%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 30 25% 88%;
+
+    --border: 30 20% 75%;
+    --input: 30 20% 75%;
+    --ring: 25 45% 45%;
+
+    /* Custom colors */
+    --light-cream: 30 25% 88%;
+    --warm-chocolate: 25 45% 45%;
+    --soft-beige: 30 15% 80%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(25 45% 45%), hsl(25 35% 35%));
+    --gradient-dark: linear-gradient(135deg, hsl(30 25% 88%), hsl(30 20% 92%));
+    --gradient-overlay: linear-gradient(rgba(234,221,202,0.8), rgba(234,221,202,0.4));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(25 45% 45% / 0.3);
+    --shadow-card: 0 8px 32px rgba(139, 103, 74, 0.2);
+  }
+
+  /* Palette 6: Неоновый киберпанк */
+  [data-theme="cyberpunk-neon"] {
+    --background: 280 100% 5%;
+    --foreground: 180 100% 85%;
+
+    --card: 280 80% 8%;
+    --card-foreground: 180 100% 85%;
+
+    --popover: 280 80% 8%;
+    --popover-foreground: 180 100% 85%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 280 100% 5%;
+
+    --secondary: 300 100% 15%;
+    --secondary-foreground: 180 100% 85%;
+
+    --muted: 300 80% 12%;
+    --muted-foreground: 180 60% 70%;
+
+    --accent: 320 100% 60%;
+    --accent-foreground: 280 100% 5%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 180 100% 85%;
+
+    --border: 280 80% 20%;
+    --input: 280 80% 20%;
+    --ring: 180 100% 50%;
+
+    /* Custom colors */
+    --neon-cyan: 180 100% 50%;
+    --electric-purple: 280 100% 5%;
+    --hot-pink: 320 100% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(320 100% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(280 100% 5%), hsl(280 80% 8%));
+    --gradient-overlay: linear-gradient(rgba(10,0,20,0.9), rgba(10,0,20,0.6));
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(180 100% 50% / 0.5);
+    --shadow-card: 0 8px 32px rgba(10, 0, 20, 0.6);
+  }
+
+  /* Palette 7: Лесная природа */
+  [data-theme="forest-nature"] {
+    --background: 140 30% 15%;
+    --foreground: 60 40% 90%;
+
+    --card: 140 25% 20%;
+    --card-foreground: 60 40% 90%;
+
+    --popover: 140 25% 20%;
+    --popover-foreground: 60 40% 90%;
+
+    --primary: 60 60% 55%;
+    --primary-foreground: 140 30% 15%;
+
+    --secondary: 140 20% 25%;
+    --secondary-foreground: 60 40% 90%;
+
+    --muted: 140 20% 25%;
+    --muted-foreground: 60 30% 70%;
+
+    --accent: 90 50% 45%;
+    --accent-foreground: 140 30% 15%;
+
+    --destructive: 15 80% 55%;
+    --destructive-foreground: 60 40% 90%;
+
+    --border: 140 25% 30%;
+    --input: 140 25% 30%;
+    --ring: 60 60% 55%;
+
+    /* Custom colors */
+    --forest-green: 140 30% 15%;
+    --moss-green: 90 50% 45%;
+    --sunny-yellow: 60 60% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(60 60% 55%), hsl(90 50% 45%));
+    --gradient-dark: linear-gradient(135deg, hsl(140 30% 15%), hsl(140 25% 20%));
+    --gradient-overlay: linear-gradient(rgba(32,51,38,0.8), rgba(32,51,38,0.4));
+
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(60 60% 55% / 0.4);
+    --shadow-card: 0 8px 32px rgba(32, 51, 38, 0.4);
+  }
+
+  /* Palette 8: Солнечный закат */
+  [data-theme="sunset-orange"] {
+    --background: 15 40% 12%;
+    --foreground: 50 60% 95%;
+
+    --card: 15 35% 18%;
+    --card-foreground: 50 60% 95%;
+
+    --popover: 15 35% 18%;
+    --popover-foreground: 50 60% 95%;
+
+    --primary: 30 80% 60%;
+    --primary-foreground: 15 40% 12%;
+
+    --secondary: 15 30% 25%;
+    --secondary-foreground: 50 60% 95%;
+
+    --muted: 15 30% 25%;
+    --muted-foreground: 30 50% 70%;
+
+    --accent: 45 90% 65%;
+    --accent-foreground: 15 40% 12%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 50 60% 95%;
+
+    --border: 15 35% 30%;
+    --input: 15 35% 30%;
+    --ring: 30 80% 60%;
+
+    /* Custom colors */
+    --sunset-red: 15 40% 12%;
+    --warm-orange: 30 80% 60%;
+    --golden-yellow: 45 90% 65%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(30 80% 60%), hsl(45 90% 65%));
+    --gradient-dark: linear-gradient(135deg, hsl(15 40% 12%), hsl(15 35% 18%));
+    --gradient-overlay: linear-gradient(rgba(46,30,22,0.8), rgba(46,30,22,0.4));
+
+    /* Shadows */
+    --shadow-glow: 0 0 35px hsl(30 80% 60% / 0.4);
+    --shadow-card: 0 8px 32px rgba(46, 30, 22, 0.4);
+  }
 }
 
 @layer base {
