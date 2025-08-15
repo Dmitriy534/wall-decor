@@ -9,7 +9,7 @@ import { useState } from "react";
 
 // Import new components
 import PriceCalculator from "@/components/PriceCalculator";
-import BeforeAfterComparison from "@/components/BeforeAfterComparison";
+import ProjectGallery from "@/components/ProjectGallery";
 import ProgressSteps from "@/components/ProgressSteps";
 import FAQ from "@/components/FAQ";
 import CallbackWidget from "@/components/CallbackWidget";
@@ -18,7 +18,6 @@ import Team from "@/components/Team";
 import Partners from "@/components/Partners";
 import Reviews from "@/components/Reviews";
 import SocialContacts from "@/components/SocialContacts";
-import ExpandableGallery from "@/components/ExpandableGallery";
 import MobileMenu from "@/components/MobileMenu";
 import CompanyDescription from "@/components/CompanyDescription";
 
@@ -354,13 +353,10 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Before/After Comparison */}
-          <div className="mb-8 md:mb-16">
-            <BeforeAfterComparison />
+          {/* Project Gallery */}
+          <div className="animate-slide-in" style={{ animationDelay: '0.3s' }}>
+            <ProjectGallery />
           </div>
-
-          {/* Expandable Gallery */}
-          <ExpandableGallery />
         </div>
       </section>
 
