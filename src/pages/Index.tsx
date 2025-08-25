@@ -185,8 +185,9 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-slide-in-left">
-              <CardContent className="p-0">
+            {/* Карточка покраски */}
+            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-slide-in-left flex flex-col h-full">
+              <CardContent className="p-0 flex flex-col h-full">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={servicePainting} 
@@ -195,7 +196,7 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center mb-4">
                     <Paintbrush className="h-6 w-6 text-primary mr-3" />
                     <h3 className="text-xl font-medium">Покраска стен</h3>
@@ -203,7 +204,7 @@ const Index = () => {
                   <p className="text-muted-foreground mb-4">
                     Водоэмульсионная и акриловая покраска. Подготовка поверхности включена.
                   </p>
-                  <div className="space-y-2">
+                  <div className="space-y-2 flex-grow">
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
                       <span>Подготовка поверхности</span>
@@ -217,15 +218,16 @@ const Index = () => {
                       <span>Гарантия 2 года</span>
                     </div>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-border">
+                  <div className="mt-auto pt-6 border-t border-border">
                     <span className="text-2xl font-medium text-primary">от 800₽/м²</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-fade-in">
-              <CardContent className="p-0">
+            {/* Карточка поклейки обоев */}
+            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-fade-in flex flex-col h-full">
+              <CardContent className="p-0 flex flex-col h-full">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={serviceWallpaper}
@@ -234,7 +236,7 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center mb-4">
                     <Palette className="h-6 w-6 text-primary mr-3" />
                     <h3 className="text-xl font-medium">Поклейка обоев</h3>
@@ -242,7 +244,7 @@ const Index = () => {
                   <p className="text-muted-foreground mb-4">
                     Флизелиновые, виниловые, жидкие обои. Идеальные стыки и долговечный результат.
                   </p>
-                  <div className="space-y-2">
+                  <div className="space-y-2 flex-grow">
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
                       <span>Флизелиновые обои</span>
@@ -256,15 +258,16 @@ const Index = () => {
                       <span>Жидкие обои</span>
                     </div>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-border">
+                  <div className="mt-auto pt-6 border-t border-border">
                     <span className="text-2xl font-medium text-primary">от 600₽/м²</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-slide-in-right">
-              <CardContent className="p-0">
+            {/* Карточка декоративной штукатурки */}
+            <Card className="group hover:shadow-glow smooth-transition card-shadow animate-slide-in-right flex flex-col h-full">
+              <CardContent className="p-0 flex flex-col h-full">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={servicePlaster}
@@ -273,7 +276,7 @@ const Index = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <div className="flex items-center mb-4">
                     <Hammer className="h-6 w-6 text-primary mr-3" />
                     <h3 className="text-xl font-medium">Декоративная штукатурка</h3>
@@ -281,7 +284,7 @@ const Index = () => {
                   <p className="text-muted-foreground mb-4">
                     Декоративная и гипсовая штукатурка. Венецианская, короед, барашек.
                   </p>
-                  <div className="space-y-2">
+                  <div className="space-y-2 flex-grow">
                     <div className="flex items-center text-sm">
                       <CheckCircle className="h-4 w-4 text-primary mr-2" />
                       <span>Венецианская штукатурка</span>
@@ -295,7 +298,7 @@ const Index = () => {
                       <span>Фактурные покрытия</span>
                     </div>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-border">
+                  <div className="mt-auto pt-6 border-t border-border">
                     <span className="text-2xl font-medium text-primary">от 1500₽/м²</span>
                   </div>
                 </div>
