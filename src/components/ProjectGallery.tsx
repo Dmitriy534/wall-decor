@@ -244,7 +244,7 @@ const ProjectGallery = () => {
 
       {/* Modal for fullscreen image viewing */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-7xl w-[95vw] h-[95vh] p-0 bg-black/95 border-none">
+        <DialogContent className="max-w-7xl w-[95vw] h-[95vh] p-0 bg-transparent border-none backdrop-blur-sm">
           <div className="relative w-full h-full flex items-center justify-center">
             {/* Close button */}
             <DialogClose className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 text-white">
