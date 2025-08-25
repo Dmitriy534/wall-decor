@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, MapPin, Calendar } from 'lucide-react';
+import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
+import { ChevronLeft, ChevronRight, MapPin, Calendar, X } from 'lucide-react';
 
 interface ProjectImage {
   id: number;
@@ -23,6 +24,8 @@ interface ProjectGroup {
 const ProjectGallery = () => {
   const [currentGroup, setCurrentGroup] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
 
   // Project groups data
   const projectGroups: ProjectGroup[] = [
@@ -86,6 +89,46 @@ const ProjectGallery = () => {
     setActiveImageIndex(0);
   };
 
+  // Modal functions
+  const openModal = (imageIndex: number) => {
+    setModalImageIndex(imageIndex);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const nextModalImage = () => {
+    setModalImageIndex((prev) => (prev + 1) % currentProject.images.length);
+  };
+
+  const prevModalImage = () => {
+    setModalImageIndex((prev) => (prev - 1 + currentProject.images.length) % currentProject.images.length);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!isModalOpen) return;
+      
+      switch (e.key) {
+        case 'Escape':
+          closeModal();
+          break;
+        case 'ArrowLeft':
+          prevModalImage();
+          break;
+        case 'ArrowRight':
+          nextModalImage();
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, [isModalOpen]);
+
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="text-center mb-8">
@@ -140,31 +183,36 @@ const ProjectGallery = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 p-6">
             {/* Main Image */}
             <div className="lg:col-span-2">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer">
                 <img
                   src={mainImage.url}
                   alt={mainImage.alt}
                   className="w-full h-full object-cover smooth-transition hover-scale"
+                  onClick={() => openModal(activeImageIndex)}
                 />
               </div>
             </div>
 
             {/* Thumbnail Images */}
             <div className="flex lg:flex-col gap-4">
-              {thumbnailImages.map((image, index) => (
-                <button
-                  key={image.id}
-                  onClick={() => handleThumbnailClick(index)}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg hover-scale smooth-transition group"
-                >
-                  <img
-                    src={image.url}
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 smooth-transition" />
-                </button>
-              ))}
+              {thumbnailImages.map((image, index) => {
+                const originalIndex = currentProject.images.findIndex(img => img.id === image.id);
+                return (
+                  <button
+                    key={image.id}
+                    onClick={() => handleThumbnailClick(index)}
+                    onDoubleClick={() => openModal(originalIndex)}
+                    className="relative aspect-[4/3] overflow-hidden rounded-lg hover-scale smooth-transition group cursor-pointer"
+                  >
+                    <img
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 smooth-transition" />
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -193,6 +241,57 @@ const ProjectGallery = () => {
           </div>
         </CardContent>
       </Card>
+
+      {/* Modal for fullscreen image viewing */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="max-w-7xl w-[95vw] h-[95vh] p-0 bg-black/95 border-none">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {/* Close button */}
+            <DialogClose className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 rounded-full p-2 text-white">
+              <X className="h-6 w-6" />
+            </DialogClose>
+
+            {/* Navigation buttons */}
+            {currentProject.images.length > 1 && (
+              <>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={prevModalImage}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 text-white border-white/20"
+                >
+                  <ChevronLeft className="h-8 w-8" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={nextModalImage}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 text-white border-white/20"
+                >
+                  <ChevronRight className="h-8 w-8" />
+                </Button>
+              </>
+            )}
+
+            {/* Main modal image */}
+            <img
+              src={currentProject.images[modalImageIndex]?.url}
+              alt={currentProject.images[modalImageIndex]?.alt}
+              className="max-w-full max-h-full object-contain"
+            />
+
+            {/* Image counter and title */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-white">
+              <p className="text-lg font-medium mb-2">
+                {currentProject.images[modalImageIndex]?.alt}
+              </p>
+              <p className="text-sm text-white/70">
+                {modalImageIndex + 1} / {currentProject.images.length}
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
