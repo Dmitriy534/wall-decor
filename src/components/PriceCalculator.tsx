@@ -20,7 +20,20 @@ const PriceCalculator = () => {
     
     const service = services.find(s => s.id === selectedService);
     if (service) {
-      const total = parseFloat(area) * service.price;
+      const areaNum = parseFloat(area);
+      let basePrice = areaNum * service.price;
+      
+      // Применяем коэффициенты в зависимости от площади
+      let coefficient = 1;
+      if (areaNum < 15) {
+        coefficient = 1.5;
+      } else if (areaNum > 100) {
+        coefficient = 1.1;
+      } else if (areaNum > 50) {
+        coefficient = 1.2;
+      }
+      
+      const total = basePrice * coefficient;
       setCalculatedPrice(total);
     }
   };
