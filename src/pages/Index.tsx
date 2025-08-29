@@ -20,6 +20,7 @@ import Reviews from "@/components/Reviews";
 import SocialContacts from "@/components/SocialContacts";
 import MobileMenu from "@/components/MobileMenu";
 import CompanyDescription from "@/components/CompanyDescription";
+import VideoSection from "@/components/VideoSection";
 
 // Import images
 import heroBg from "@/assets/hero-bg.jpg";
@@ -418,6 +419,9 @@ const Index = () => {
 
       {/* Company Description Section */}
       <CompanyDescription />
+
+      {/* Video Section */}
+      <VideoSection />
 
       {/* Promotions Section */}
       <section className="py-12 md:py-20 bg-dark-surface">

@@ -5,6 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
 import { ChevronLeft, ChevronRight, MapPin, Calendar, X } from 'lucide-react';
 
+// Import images
+import gallery1 from '@/assets/gallery-1.jpg';
+import gallery2 from '@/assets/gallery-2.jpg';
+import gallery3 from '@/assets/gallery-3.jpg';
+import servicePainting from '@/assets/service-painting.jpg';
+import servicePlaster from '@/assets/service-plaster.jpg';
+import serviceWallpaper from '@/assets/service-wallpaper.jpg';
+
 interface ProjectImage {
   id: number;
   url: string;
@@ -37,9 +45,9 @@ const ProjectGallery = () => {
       type: 'Жилая недвижимость',
       description: 'Комплексная отделка 3-комнатной квартиры с применением декоративной штукатурки и дизайнерских решений',
       images: [
-        { id: 1, url: '/src/assets/gallery-1.jpg', alt: 'Гостиная с декоративной штукатуркой' },
-        { id: 2, url: '/src/assets/gallery-2.jpg', alt: 'Спальня с современной отделкой' },
-        { id: 3, url: '/src/assets/gallery-3.jpg', alt: 'Кухня с акцентной стеной' }
+        { id: 1, url: gallery1, alt: 'Гостиная с декоративной штукатуркой' },
+        { id: 2, url: gallery2, alt: 'Спальня с современной отделкой' },
+        { id: 3, url: gallery3, alt: 'Кухня с акцентной стеной' }
       ]
     },
     {
@@ -50,9 +58,9 @@ const ProjectGallery = () => {
       type: 'Коммерческая недвижимость',
       description: 'Отделка офисных помещений с использованием современных материалов и технологий',
       images: [
-        { id: 4, url: '/src/assets/service-painting.jpg', alt: 'Офисный холл' },
-        { id: 5, url: '/src/assets/service-plaster.jpg', alt: 'Переговорная комната' },
-        { id: 6, url: '/src/assets/service-wallpaper.jpg', alt: 'Рабочая зона' }
+        { id: 4, url: servicePainting, alt: 'Офисный холл' },
+        { id: 5, url: servicePlaster, alt: 'Переговорная комната' },
+        { id: 6, url: serviceWallpaper, alt: 'Рабочая зона' }
       ]
     },
     {
@@ -63,9 +71,9 @@ const ProjectGallery = () => {
       type: 'Частный дом',
       description: 'Эксклюзивная отделка загородного дома с акцентом на натуральные материалы',
       images: [
-        { id: 7, url: '/src/assets/gallery-1.jpg', alt: 'Главная спальня' },
-        { id: 8, url: '/src/assets/gallery-2.jpg', alt: 'Гостиная с камином' },
-        { id: 9, url: '/src/assets/gallery-3.jpg', alt: 'Детская комната' }
+        { id: 7, url: gallery1, alt: 'Главная спальня' },
+        { id: 8, url: gallery2, alt: 'Гостиная с камином' },
+        { id: 9, url: gallery3, alt: 'Детская комната' }
       ]
     }
   ];
